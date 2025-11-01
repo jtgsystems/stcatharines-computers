@@ -15,9 +15,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Add 301 redirects from old WordPress URLs
+      // WordPress admin redirects
       {
-        source: '/wp-:path*',
+        source: '/wp-admin',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-login.php',
         destination: '/',
         permanent: true,
       },
